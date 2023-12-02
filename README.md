@@ -19,6 +19,6 @@ LISA adalah perangkat lunak yang dirancang untuk menerjemahkan teks atau ucapan 
 
 
 # link
-https://pendidikan-ti.ft.unesa.ac.id/
-https://unesa.ac.id
-https://ft.unesa.ac.id
+- https://pendidikan-ti.ft.unesa.ac.id/
+- https://unesa.ac.id
+- https://ft.unesa.ac.id
