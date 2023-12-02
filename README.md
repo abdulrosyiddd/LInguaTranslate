@@ -5,7 +5,7 @@ LISA adalah perangkat lunak yang dirancang untuk menerjemahkan teks atau ucapan 
 
 # nama anggota
 - novi eka rahmawati(22050974044)
-- moh. abdul rosyid(220509740530)
+- moh. abdul rosyid(22050974053)
 - indana aulia zulfa(220509706090)
 - ahmad zulkifli baihaqi(22050974078)
 
