@@ -4,10 +4,10 @@ LISA adalah perangkat lunak yang dirancang untuk menerjemahkan teks atau ucapan 
 
 
 # nama anggota
-novi eka rahmawati(22050974044)
-moh. abdul rosyid(220509740530)
-indana aulia zulfa(220509706090)
-ahmad zulkifli baihaqi(22050974078)
+- novi eka rahmawati(22050974044)
+- moh. abdul rosyid(220509740530)
+- indana aulia zulfa(220509706090)
+- ahmad zulkifli baihaqi(22050974078)
 
 # fitur
 * Menerjemahkan Teks: Aplikasi translate utama biasanya memungkinkan pengguna untuk memasukkan teks dalam bahasa sumber dan kemudian menerjemahkannya ke bahasa tujuan.
