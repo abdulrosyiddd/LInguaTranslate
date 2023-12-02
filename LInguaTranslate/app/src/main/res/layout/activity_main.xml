@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/translate" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:text="Lingua Translate"
+                android:textColor="#000"
+                android:textSize="23sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/optionsLl"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_above="@+id/translateBtn">
+
+            <!--MaterialButton: Choose Source Language (from list) which you need to translate e.g. English -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sourceLanguageChooseBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="English"
+                app:cornerRadius="10dp"
+                android:layout_weight="1"/>
+
+            <!--ImageButton: just to show the direction from and to-->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@android:color/transparent"
+                android:layout_weight="1"
+                android:src="@drawable/exchange"/>
+
+            <!--MaterialButton: Choose destination language (from list) in which you want to translate e.g. Urdu-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/destinationLanguageChooseBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Urdu"
+                app:cornerRadius="10dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_above="@id/optionsLl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Edit Text: Text to be translated-->
+                <EditText
+                    android:id="@+id/sourceLanguageEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Masukkan teks"
+                    android:minHeight="150dp"
+                    android:gravity="start"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <!--Button: Take Image from Camera, Gallery-->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/inputImageBtn"
+                        app:cornerRadius="10dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_weight="1"
+                        app:icon="@drawable/takephoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <!--Button: Recognize text from the image we took from camera/gallery-->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/recognizedTextBtn"
+                        app:cornerRadius="10dp"
+                        android:layout_marginStart="5dp"
+                        app:icon="@drawable/scan"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <!--ImageButton: By clicking this SpeechToText dialog will be shown-->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/voiceBtn"
+                        app:cornerRadius="10dp"
+                        android:layout_marginStart="5dp"
+                        app:icon="@drawable/mic"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <!--ImageButton: on click start reading content of source language-->
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_below="@+id/sourceLanguageEt"
+                        android:id="@+id/speakBtn"
+                        app:cornerRadius="10dp"
+                        android:layout_marginStart="5dp"
+                        app:icon="@drawable/speak"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <!--Stop speaking button of source language-->
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_below="@+id/sourceLanguageEt"
+                        android:id="@+id/stopBtn"
+                        app:cornerRadius="10dp"
+                        android:layout_marginStart="5dp"
+                        app:icon="@drawable/muted"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <!--TextView: Display translate text-->
+                <TextView
+                    android:id="@+id/destinationLanguageTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="150dp"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:hint="Terjemahan"
+                    android:textSize="18sp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp">
+
+                    <!--ImageButton: on click start reading content of source language-->
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_below="@+id/sourceLanguageEt"
+                        android:id="@+id/speak2Btn"
+                        app:cornerRadius="10dp"
+                        android:layout_marginStart="5dp"
+                        app:icon="@drawable/speak"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                    <!--Stop speaking button of source language-->
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_below="@+id/sourceLanguageEt"
+                        android:id="@+id/stop2Btn"
+                        app:cornerRadius="10dp"
+                        android:layout_marginStart="5dp"
+                        app:icon="@drawable/muted"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!--MeterialBUtton: Click to translate the text in desireed language-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/translateBtn"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cornerRadius="10dp"
+            android:layout_alignParentBottom="true"
+            android:text="Translate"/>
+
+        <!--ImageView: show image we took from camera/gallery-->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageTv"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:src="@drawable/image"
+            android:autofillHints="Display image"
+            android:adjustViewBounds="true" />
+
+    </LinearLayout>
+
+</RelativeLayout>
